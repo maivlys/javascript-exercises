@@ -1,9 +1,26 @@
 const sumAll = function (start, end) {
-  let arr = [start];
-  for (let i = 1; i < end; i++) {
-    arr[i] = arr[i - 1] + 1;
+  if (typeof start !== "number" || typeof end !== "number") {
+    return "ERROR";
   }
-  return arr.reduce((a, b) => a + b, 0);
+  if (!Number.isInteger(start) || !Number.isInteger(end)) {
+    return "ERROR";
+  }
+  if (start < 0 || end < 0) {
+    return "ERROR";
+  }
+  // -----------------------------------------------
+  let arr = [];
+
+  if (start < end) {
+    for (let i = start; i < end + 1; i++) {
+      arr.push(i);
+    }
+  } else if (start > end) {
+    for (let i = end; i < start + 1; i++) {
+      arr.push(i);
+    }
+  }
+  return arr.reduce((a, b) => a + b);
 };
 
 // Do not edit below this line

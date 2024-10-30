@@ -1,13 +1,11 @@
 const convertToCelsius = function (number) {
   let result = ((number - 32) * 5) / 9;
-  result.toFixed(1);
-  return result;
+  return Number(result.toFixed(1));
 };
 
 const convertToFahrenheit = function (number) {
-  let result = (number * 5) / 9 + 32;
-  result.toFixed(1);
-  return result;
+  let result = number * 1.8 + 32;
+  return Number(result.toFixed(1));
 };
 
 // Do not edit below this line

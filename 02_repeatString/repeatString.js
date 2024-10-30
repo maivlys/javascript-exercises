@@ -2,6 +2,9 @@ const repeatString = function (string, repeat) {
   if (repeat < 0) {
     return "ERROR";
   }
+  if (repeat === 0) {
+    return "";
+  }
   let result = string;
   for (let i = 1; i < repeat; i++) {
     result += string;
